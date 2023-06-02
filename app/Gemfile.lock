@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    connection_pool (2.4.1)
+    faktory_worker_ruby (1.3.0)
+      connection_pool (~> 2.2, >= 2.2.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  faktory_worker_ruby
+
+BUNDLED WITH
+   2.3.26
