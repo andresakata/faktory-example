@@ -6,3 +6,13 @@ services:
     ports:
       - "7420:7420"
       - "7419:7419"
+
+  ruby-worker:
+    build: ./ruby-worker
+    command: bundle exec faktory-worker -r ./main.rb
+    environment:
+      - FAKTORY_URL=tcp://faktory:7419
+    volumes:
+      - ./ruby-worker:/usr/src/app
+    depends_on:
+      - faktory

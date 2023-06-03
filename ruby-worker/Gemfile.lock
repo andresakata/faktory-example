@@ -6,6 +6,8 @@ GEM
       connection_pool (~> 2.2, >= 2.2.2)
 
 PLATFORMS
+  aarch64-linux-musl
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES

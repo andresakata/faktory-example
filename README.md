@@ -18,3 +18,21 @@ PRESENTATION
 - Use cases
 - Dashboard
 - Attention to idempotency and concurrency
+
+## Diagram
+
+TODO
+
+## How To Run
+
+Ruby the project:
+
+```
+docker compose up
+```
+
+Enqueue jobs to `ruby-worker`:
+
+```
+docker compose run ruby-worker ruby enqueue.rb
+```
