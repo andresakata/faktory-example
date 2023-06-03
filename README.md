@@ -17,3 +17,4 @@ PRESENTATION
 - Architecture
 - Use cases
 - Dashboard
+- Attention to idempotency and concurrency
