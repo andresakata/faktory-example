@@ -32,8 +32,8 @@ Ruby the project:
 docker compose up
 ```
 
-Enqueue jobs to `ruby-worker`:
+Enqueue jobs to `ruby-app`:
 
 ```
-docker compose run ruby-worker ruby enqueue.rb
+docker compose run ruby-app ruby enqueue.rb
 ```
