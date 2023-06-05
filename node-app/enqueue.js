@@ -11,6 +11,18 @@ async function createJob(scheduleAt) {
   console.log("Job", jid);
 }
 
-var scheduleAt = new Date(new Date().getTime() + 60 * 1000);
+async function deleteJob(jid) {
+  const client = await faktory.connect();
+  client.scheduled.withJids(jid).discard();
+  await client.close();
+  console.log("Job", jid, "deleted");
+}
 
-createJob(scheduleAt);
+if (process.argv[2] == "push") {
+  var scheduleAt = new Date(new Date().getTime() + (1 * 60 * 1000));
+  createJob(scheduleAt);
+}
+
+if (process.argv[2] == "discard") {
+  deleteJob(process.argv[3]);
+}
