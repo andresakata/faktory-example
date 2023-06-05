@@ -16,3 +16,13 @@ services:
       - ./ruby-app:/usr/src/app
     depends_on:
       - faktory
+
+  node-app:
+    build: ./node-app
+    command: node main.js
+    environment:
+      - FAKTORY_URL=tcp://faktory:7419
+    volumes:
+      - ./node-app:/usr/src/app
+    depends_on:
+      - faktory
