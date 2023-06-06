@@ -24,13 +24,13 @@ func main() {
 	mgr := worker.NewManager()
 
 	// register job types and the function to execute them
-	mgr.Register("SomeJob", someFunc)
+	mgr.Register("AnotherJob", someFunc)
 
 	// use up to N goroutines to execute jobs
 	mgr.Concurrency = 20
 
 	// pull jobs from these queues, in this order of precedence
-	mgr.ProcessStrictPriorityQueues("critical", "default", "bulk")
+	mgr.ProcessStrictPriorityQueues("golang-app")
 
 	// alternatively you can use weights to avoid starvation
 	//mgr.ProcessWeightedPriorityQueues(map[string]int{"critical":3, "default":2, "bulk":1})
