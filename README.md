@@ -1,24 +1,17 @@
 # Faktory Example
 
-USE CASES
-1) When there is an error, it should retry
-2) Schedule job
-3) Schedule and remove job
-4) Specify number of retries and queue
-
-## Diagram
-
-TODO
+This repository is a test of the Faktory tool.
 
 ## How To Run
 
 Ruby the project:
 
 ```
+docker compose run node-app npm install
 docker compose up
 ```
 
-***
+### Use Case 1) Retry
 
 Enqueue jobs to `ruby-app`:
 
@@ -26,7 +19,7 @@ Enqueue jobs to `ruby-app`:
 docker compose run ruby-app ruby enqueue.rb
 ```
 
-***
+### Use Case 2) Schedule
 
 Enqueue jobs to `node-app`:
 
@@ -39,12 +32,13 @@ It is going to schedule a job to run one minute ahead. You can discard the job b
 ```
 docker compose run node-app node enqueue.js discard <jid>
 ```
-***
+
+### Use Case 3) Retry configuration.
 
 Enqueue jobs to `golang-app`:
 
 ```
-docker-compose run golang-app enqueue
+docker compose run golang-app enqueue
 ```
 
-It is going to push 6 jobs to be asynchronous runned, and will schedule 1 job 30 seconds in the future.
+It is going to push 6 jobs to run asynchronously and will schedule 1 job in 30 seconds in the future.
