@@ -26,3 +26,13 @@ services:
       - ./node-app:/usr/src/app
     depends_on:
       - faktory
+
+  golang-app:
+    build: ./golang-app
+    command: app
+    environment:
+      - FAKTORY_URL=tcp://faktory:7419
+    volumes:
+      - ./golang-app:/usr/src/app
+    depends_on:
+      - faktory

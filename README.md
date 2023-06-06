@@ -39,3 +39,12 @@ It is going to schedule a job to run one minute ahead. You can discard the job b
 ```
 docker compose run node-app node enqueue.js discard <jid>
 ```
+***
+
+Enqueue jobs to `golang-app`:
+
+```
+docker-compose run golang-app enqueue
+```
+
+It is going to push 6 jobs to be asynchronous runned, and will schedule 1 job 30 seconds in the future.
